@@ -1,7 +1,8 @@
 const express = require("express");
-
+const cors = require("cors");
 
 const app = express();
+app.use(cors())
 
 const port = process.env.PORT || 4000;
 
@@ -10,7 +11,7 @@ app.set("views", __dirname + "/views");
 
 app.use(express.static(__dirname+'/public'));
 
-app.use('/', require('./router/index'));
+app.use('/', require('./router/inicio'));
 
 app.use((req, res, next) => {
   res.status(404).render("404")

@@ -94,18 +94,22 @@
                 </div>
             </div>
             <div class="row pt-5">
-                <div class="col-lg-4 col-md-6 mb-lg-0 mb-5">
-                    <div class="card">
-                        <img src="images/img/img-3.jpg" class="img-fluid">
-                        <div class="pt-3">
-                            <h4>Rainbow Vegetable Sandwich</h4>
-                            <p>Time: 15 - 20 Minutes | Serves: 1</p>
-                            <span>$10.50 <del>$11.70</del></span>
-                            <button class="mt-4 main-btn">Order Now</button>
+            <% if (listamenu != null) { %>
+                <% listamenu.forEach(element => { %>
+                 
+                        <div class="col-lg-4 col-md-6 mb-lg-0 mb-5">
+                            <div class="card">
+                                <img src="<%= element.link %>" class="img-fluid">
+                                <div class="pt-3">
+                                    <h4><%= element.name %></h4>
+                                    <p><%= element.description %></p>
+                                    <span>$<%= element.price %></span>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 mb-lg-0 mb-5">
+                <% }) %>
+            <% } %>
+                <!-- <div class="col-lg-4 col-md-6 mb-lg-0 mb-5">
                     <div class="card">
                         <img src="images/img/img-4.jpg" class="img-fluid">
                         <div class="pt-3">
@@ -126,7 +130,7 @@
                             <button class="mt-4 main-btn">Order Now</button>
                         </div>
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>
     </div>
