@@ -1,5 +1,4 @@
 const express = require("express");
-
 const app = express();
 
 const port = process.env.PORT || 4000;
@@ -9,7 +8,11 @@ app.set("views", __dirname + "/views");
 
 app.use(express.static(__dirname+'/public'));
 
-app.use('/', require('./router/inicio'));
+app.use('/', require('./router/inicio.js'));
+app.use('/login', require('./router/login.js'));
+app.use('/reserva', require('./router/reserva.js'));
+app.use('/registro', require('./router/registro.js'));
+
 
 app.use((req, res, next) => {
   res.status(404).render("404")

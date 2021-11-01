@@ -17,6 +17,13 @@ navBar.forEach(function(a){
         navCollapse.classList.remove("show");
     })
 })
-   
-   
 
+
+var now = new Date();
+
+now.setMinutes(now.getMinutes() - now.getTimezoneOffset());
+document.getElementById('reserva').value = now.toISOString().slice(0,16);
+
+console.log(now.toISOString())
+
+document.getElementById('reserva').min = now.toISOString().slice(0,16);

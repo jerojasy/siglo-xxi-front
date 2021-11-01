@@ -8,7 +8,7 @@
                 <div class="col-lg-5 col-md-6">
                     <h1>Restaurante Siglo XXI</h1>
                     <div class="mt-4">
-                        <button class="main-btn">Reserva<i class="fas fa-calendar-alt ps-3"></i></button>
+                        <a class="main-btn" href="/reserva">Reserva<i class="fas fa-calendar-alt ps-3"></i></a>
                         <!-- <button class="white-btn ms-lg-4 mt-lg-0 mt-4">Nuestro Menú<i
                                 class="fas fa-angle-right ps-3"></i></button> -->
                     </div>
@@ -70,7 +70,7 @@
                     <div class="text-content">
                         <h2>Ven a probar nuestros platos.</h2>
                         <p>Inicia sesión para hacer tu reserva, si no estás registrado te invitamos a llenar el formulario de registro.</p>
-                        <button class="main-btn mt-3">Reserva tu mesa aquí</button>
+                        <a class="main-btn mt-3" href="/reserva">Reserva tu mesa aquí</a>
                     </div>
                 </div>
             </div>
@@ -99,10 +99,10 @@
                  
                         <div class="col-lg-4 col-md-6 mb-lg-0 mb-5">
                             <div class="card">
-                                <img src="<%= element.link %>" class="img-fluid">
+                                <img src="<%= element.link %>" class="img-fluid" style="height: 15rem;">
                                 <div class="pt-3">
                                     <h4><%= element.name %></h4>
-                                    <p><%= element.description %></p>
+                                    <p style="height: 6rem;"><%= element.description %></p>
                                     <span>$<%= element.price %></span>
                                 </div>
                             </div>
