@@ -21,9 +21,10 @@ navBar.forEach(function(a){
 
 var now = new Date();
 
-now.setMinutes(now.getMinutes() - now.getTimezoneOffset());
-document.getElementById('reserva').value = now.toISOString().slice(0,16);
+// now.setMinutes(now.getMinutes() - now.getTimezoneOffset());
+// document.getElementById('reserva').value = now.toISOString().slice(0,16);
 
 console.log(now.toISOString())
+console.log(now.toISOString().slice(0,16))
 
 document.getElementById('reserva').min = now.toISOString().slice(0,16);

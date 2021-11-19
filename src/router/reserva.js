@@ -29,7 +29,7 @@ router.get('/',(req, res) => {
         req.session.user;
         req.session.user_data;
         console.log("session data 2:", req.session.user_data)
-        res.render('reserva', { resmsg : null , flag : null })
+        res.render('reserva', { resmsg : null , flag : null, user : req.session.user_data })
     } else {
         res.render('login', { loginmsg : 'Debes iniciar sesión' , flag : 'warning' })
     }
@@ -48,13 +48,13 @@ router.post('/', async(req, res) => {
             'token': localStorage.getItem(req.session.user)
         }})
         console.log("RESPONSE:", postReserva.data)
-        res.render('reserva', {resmsg : 'Reserva realizada con exito', flag : 'success'})
+        res.render('reserva', {resmsg : 'Reserva realizada con exito', flag : 'success', user : req.session.user_data})
     }catch(err){
         if (err.response) {
             console.log(err.response.data)
             console.log(err.response.status)
             console.log(err.response.headers)
-            res.render('reserva', {resmsg : err.response.data, flag : 'warning'})
+            res.render('reserva', {resmsg : err.response.data, flag : 'warning', user : req.session.user_data})
         } else if(err.request){
             console.log(request)
         }else{

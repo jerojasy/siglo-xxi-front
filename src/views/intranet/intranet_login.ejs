@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="Description" content="Enter your description here" />
+    <title>Restaurante Siglo XXI</title>
+    <!-- bootstrap CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+
+    <!-- OWN CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<div class="sidenav">
+    <div class="login-main-text">
+        <h2>Restaurante<br> Siglo XXI</h2>
+        <p>Intranet Login</p>
+    </div>
+</div>
+<div class="main main-login">
+    <div class="col-md-6 col-sm-12">
+        <div class="login-form">
+            <form action="/intranet_login" method="POST">
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="email" required>
+                    <div id="emailHelp" class="form-text">Utilice su e-mail como nombre de usuario.</div>
+                  </div>
+                  <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label">Password</label>
+                    <input type="password" class="form-control" id="exampleInputPassword1" name="password" required>
+                  </div>
+                <button type="submit" class="btn main-btn">Iniciar Sesión</button>
+            </form>
+        </div>
+        <br>
+        <% if (loginmsg !=null) { %>
+            <div class="alert alert-<%= flag %> alert-dismissible fade show " role="alert">
+                <p class="text-center">
+                    <%= loginmsg %>
+                </p>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+            <% } else if (loginmsg===undefined){ %>
+                <div class="alert alert-danger alert-dismissible fade show"
+                    role="alert">
+                    <p class="text-center"> Ha ocurrido un Error. </p>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+                <% } %>
+    </div>
+</div>
+
+<!-- JS Libraries -->
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js"></script>
+<!-- own js -->
+<script src="js/main.js"></script>

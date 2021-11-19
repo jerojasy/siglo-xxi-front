@@ -11,6 +11,13 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
 
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment-with-locales.min.js" integrity="sha512-LGXaggshOkD/at6PFNcp2V2unf9LzFq6LE+sChH7ceMTDP0g2kn6Vxwgg7wkPP7AAtX+lmPqPdxB47A0Nz0cMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.full.min.js" integrity="sha512-AIOTidJAcHBH2G/oZv9viEGXRqDNmfdPVPYOYKGy3fti0xIplnlgMHUGfuNRzC6FkzIo0iIxgFnr9RikFxK+sw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.css" integrity="sha512-bYPO5jmStZ9WI2602V2zaivdAnbAhtfzmxnEGh9RwtlI00I9s8ulGe4oBa5XxiC6tCITJH/QG70jswBhbLkxPw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
     <!-- OWN CSS -->
     <link rel="stylesheet" href="css/style.css">
 </head>
@@ -28,6 +35,12 @@
                 <div class="collapse navbar-collapse" id="navbarText">
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                         <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#" style="text-transform: inherit !important;">Hola, <%= user %></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="/logout">Cerrar Sesión</a>
+                        </li>
+                        <li class="nav-item">
                             <a class="nav-link active" aria-current="page" href="/">Volver al Inicio</a>
                         </li>
                     </ul>
@@ -38,14 +51,15 @@
     <section>
         <div class="container-sm w-25 pb-5" style="padding-top: 110px; margin-bottom: 150px;">
             <form action="/reserva" method="post"> 
-                <label for="reserva" class="form-label">Reserva</label>
-                <input type="datetime-local" id="reserva" class="form-control" aria-describedby="" name="fechareserva" required>
+                <label for="reserva" class="form-label">Reserva una mesa</label>
+                <input type="datetime-local" id="reserva" class="form-control" aria-describedby="" name="fechareserva" max="2021-12-31T21:00" step="" required>
                 <div id="HelpBlock" class="form-text">
                     Por favor ingrese fecha y hora estimada a reservar.
                 </div>
                 <br>
                 <button class="main-btn" type="submit">Reservar<i class="fas fa-calendar-alt ps-3"></i></button>
             </form>
+
             <br>
               <% if (resmsg !=null) { %>
                 <div class="alert alert-<%= flag %> alert-dismissible fade show " role="alert">
