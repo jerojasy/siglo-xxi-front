@@ -46,7 +46,7 @@ router.post('/', async(req, res) => {
         req.session.user = postLogin.data.user_id;
         req.session.rol = postLogin.data.rol_id;
         req.session.user_data = req.body.email;
-        res.redirect('/intranet')
+        res.redirect('/home')
     }catch (err) {
         if(err.response) {
             console.log("RESPONSE DETAIL:",err.response.data.detail)

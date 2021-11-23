@@ -14,6 +14,7 @@ app.use('/intranet_login', require('./router/intranet_login.js'));
 app.use('/reserva', require('./router/reserva.js'));
 app.use('/registro', require('./router/registro.js'));
 app.use('/intranet', require('./router/intranet.js'));
+app.use('/home', require('./router/home.js'));
 
 
 app.use((req, res, next) => {
